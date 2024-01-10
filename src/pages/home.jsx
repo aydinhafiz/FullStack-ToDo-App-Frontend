@@ -24,19 +24,19 @@ function Home() {
   };
 
   return (
-    <div>
-      <div className="container">
+    <div className="container">
+      <div className="content">
         <h1>ToDo App</h1>
-
         <div className="top">
           <input
+            className="add-input"
             type="text"
             placeholder="Add ToDos.."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <div
-            className="add"
+          <button
+            className="add-button"
             onClick={
               isUpdating
                 ? () =>
@@ -45,7 +45,7 @@ function Home() {
             }
           >
             {isUpdating ? "Update" : "Add"}
-          </div>
+          </button>
         </div>
         <div className="list">
           {toDo.map((item) => (
