@@ -47,6 +47,11 @@ h1 {
   gap: 1rem;
   justify-content: center;
   display: flex;
+  margin-bottom: 10px;
+}
+
+.list {
+  width: 430px;
 }
 
 input {
@@ -90,11 +95,23 @@ input {
 
 .todo {
   position: relative;
-  margin-top: 1rem;
   background-color: #000;
   color: #fff;
-  padding: 1.5rem 3rem;
+  padding: 15px 30px;
   border-radius: 5px;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: radial-gradient(
+    166.82% 166.82% at 103.9% -10.39%,
+    #e84d70 0%,
+    #a337f6 53.09%,
+    #28a7ed 100%
+  );
+}
+
+.todo:hover{
+  transition: 1s;
+  padding: 20px 40px;
 }
 
 .icons {
