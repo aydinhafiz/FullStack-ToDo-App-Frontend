@@ -25,10 +25,18 @@ export const SContent = styled.div`
   }
 
   .top {
-    margin-top: 1rem;
-    gap: 1rem;
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 10px;
+
+    @media only screen and (max-width: 425px) {
+      gap: 0rem;
+      margin-top: 10px;
+      align-items: center;
+    }
   }
 
   .list {
@@ -53,6 +61,7 @@ export const SContent = styled.div`
 
     @media only screen and (max-width: 425px) {
       margin-bottom: 15px;
+      padding: 10px 5px;
     }
   }
 
@@ -86,12 +95,20 @@ export const SContent = styled.div`
   }
 `;
 
+export const STodos = styled.div`
+  @media only screen and (max-width: 425px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 export const STodo = styled.div`
   position: relative;
   background-color: #000;
   color: #fff;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
 
   margin-bottom: 15px;
 
@@ -102,6 +119,10 @@ export const STodo = styled.div`
     #a337f6 53.09%,
     #28a7ed 100%
   );
+
+  @media only screen and (max-width: 425px) {
+    width: 350px;
+  }
 
   &:hover {
     transition: 1s ease;
