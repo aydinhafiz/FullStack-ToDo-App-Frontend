@@ -7,8 +7,10 @@ export const SContent = styled.div`
   align-items: start;
 
   @media only screen and (max-width: 425px) {
-    align-items: center;
     margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
   }
 
   h1 {
@@ -36,6 +38,8 @@ export const SContent = styled.div`
       gap: 0rem;
       margin-top: 10px;
       align-items: center;
+      justify-content: center;
+      margin-left: 45px;
     }
   }
 
@@ -100,6 +104,7 @@ export const STodos = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 45px;
   }
 `;
 
