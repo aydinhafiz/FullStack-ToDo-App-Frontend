@@ -6,11 +6,12 @@ export const SContent = styled.div`
   flex-direction: column;
   align-items: start;
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 460px) {
     margin-top: 50px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 380px;
+    width: 400px;
   }
 
   h1 {
@@ -29,32 +30,37 @@ export const SContent = styled.div`
   .top {
     margin-top: 10px;
     gap: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin-bottom: 10px;
 
-    @media only screen and (max-width: 425px) {
-      gap: 0rem;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width: 460px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 0px;
       margin-top: 10px;
       align-items: center;
       justify-content: center;
-      margin-left: 45px;
+      width: 400px;
     }
   }
 
   .list {
-    width: 430px;
+    width: 400px;
   }
 
   input {
     border: none;
     outline: none;
     width: 400px;
-    padding: 20px 15px;
 
     border-radius: 10px;
     background: #373f68;
+
+    padding: 20px 30px;
 
     color: #f7f8fd;
     font-family: "Jost";
@@ -63,31 +69,31 @@ export const SContent = styled.div`
     font-weight: 400;
     line-height: normal;
 
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 460px) {
       margin-bottom: 15px;
-      padding: 10px 5px;
+      width: 340px;
     }
   }
 
   .add-button {
     background-color: #000;
     color: #fff;
-    padding: 15px 30px;
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    margin-left: 15px;
+
     background: #d73737;
+    padding: 20px 30px;
 
     color: #f2f4fe;
     text-align: center;
     font-family: "Jost";
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 460px) {
       width: 100%;
       margin-bottom: 10px;
       margin-left: 0px;
@@ -100,19 +106,19 @@ export const SContent = styled.div`
 `;
 
 export const STodos = styled.div`
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 460px) {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 45px;
   }
 `;
 
 export const STodo = styled.div`
+  padding: 20px 30px;
+
   position: relative;
   background-color: #000;
   color: #fff;
-  padding: 15px 30px;
   border-radius: 10px;
 
   margin-bottom: 15px;
@@ -125,17 +131,8 @@ export const STodo = styled.div`
     #28a7ed 100%
   );
 
-  @media only screen and (max-width: 425px) {
-    width: 350px;
-  }
-
-  &:hover {
-    transition: 1s ease;
-    padding: 20px 40px;
-  }
-
-  &:not(:hover) {
-    transition: padding 1s ease;
+  @media only screen and (max-width: 460px) {
+    width: 400px;
   }
 
   .icons {
@@ -144,7 +141,7 @@ export const STodo = styled.div`
     transform: translateY(-50%);
     right: 20px;
     display: flex;
-    gap: 0.5rem;
+    gap: 5px;
   }
 
   .icon {
