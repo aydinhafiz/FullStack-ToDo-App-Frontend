@@ -6,6 +6,7 @@ import {
   updateToDo,
   deleteToDo,
 } from "../utils/HandleApi";
+import { SContent } from "./home.styles";
 
 function Home() {
   const [toDo, setToDo] = useState([]);
@@ -25,8 +26,9 @@ function Home() {
 
   return (
     <div className="container">
-      <div className="content">
+      <SContent className="content">
         <h1>ToDo App</h1>
+
         <div className="top">
           <input
             className="add-input"
@@ -47,6 +49,7 @@ function Home() {
             {isUpdating ? "Update" : "Add"}
           </button>
         </div>
+
         <div className="list">
           {toDo.map((item) => (
             <ToDo
@@ -57,10 +60,9 @@ function Home() {
             />
           ))}
         </div>
-      </div>
+      </SContent>
     </div>
   );
 }
-
 
 export default Home;
