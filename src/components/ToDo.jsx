@@ -6,7 +6,6 @@ import { STodo, STodos } from "../pages/home.styles";
 
 function ToDo({ text, updateMode, deleteTodo }) {
   return (
-    
     <STodos>
       <STodo>
         <div className="text">{text}</div>
