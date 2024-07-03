@@ -1,12 +1,13 @@
 import axios from "axios";
 
 const basedUrl = "https://fullstack-todo-app-2vy7.onrender.com";
+// gelen dasayi log etmek istersen line 11 e data yaz
 
 const getAllTodo = (setTodo) => {
   axios
     .get(basedUrl)
     .then(({ data }) => {
-      console.log("data --->", data);
+      console.log("data --->");
       setTodo(data);
     })
     .catch((error) => {

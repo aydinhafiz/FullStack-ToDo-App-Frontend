@@ -11,7 +11,7 @@ function ToDo({ text, updateMode, deleteTodo }) {
         <div className="text">{text}</div>
         <div className="icons">
           <BiEdit className="icon" onClick={updateMode} />
-          <AiFillDelete className="icon" onClick={deleteTodo} />
+          {/* <AiFillDelete className="icon" onClick={deleteTodo} /> */}
         </div>
       </STodo>
     </STodos>
