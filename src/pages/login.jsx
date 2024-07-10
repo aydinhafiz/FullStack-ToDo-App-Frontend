@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // React Router Hook
+import { Link, useNavigate } from "react-router-dom"; // React Router Hook
 
 const Login = ({ setToken }) => {
   const [formData, setFormData] = useState({
@@ -17,7 +17,11 @@ const Login = ({ setToken }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("https://fullstack-todo-app-2vy7.onrender.com/api/auth/login", formData)
+    axios
+      .post(
+        "https://fullstack-todo-app-2vy7.onrender.com/api/auth/login",
+        formData
+      )
       .then((res) => {
         setToken(res.data.token);
         navigate("/"); // Navigation nach erfolgreichem Login
@@ -27,9 +31,24 @@ const Login = ({ setToken }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-      <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        onChange={handleChange}
+        required
+      />
       <button type="submit">Login</button>
+      <Link to="/register">
+        <button type="submit">Register</button>
+      </Link>
     </form>
   );
 };
