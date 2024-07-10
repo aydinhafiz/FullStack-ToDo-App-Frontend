@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ToDo from "../components/ToDo";
-import {
-  addToDo,
-  getAllTodo,
-  updateToDo,
-  deleteToDo,
-} from "../utils/HandleApi";
+import { addToDo, getAllTodo, updateToDo, deleteToDo } from "../utils/HandleApi";
 import { SContent } from "./home.styles";
+import axios from "axios";
 
-function Home() {
+const Home = ({ logout }) => {
   const [toDo, setToDo] = useState([]);
   const [text, setText] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
   const [toDoId, setToDoId] = useState("");
 
   useEffect(() => {
-    getAllTodo(setToDo);
+    const fetchData = async () => {
+      const token = localStorage.getItem("token");
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      getAllTodo(setToDo);
+    };
+    fetchData();
   }, []);
 
   const updateMode = (_id, text) => {
@@ -28,7 +29,7 @@ function Home() {
     <div className="container">
       <SContent className="content">
         <h1>ToDo App</h1>
-
+        <button onClick={logout}>Logout</button>
         <div className="top">
           <input
             className="add-input"
@@ -41,15 +42,13 @@ function Home() {
             className="add-button"
             onClick={
               isUpdating
-                ? () =>
-                    updateToDo(toDoId, text, setToDo, setText, setIsUpdating)
+                ? () => updateToDo(toDoId, text, setToDo, setText, setIsUpdating)
                 : () => addToDo(text, setText, setToDo)
             }
           >
             {isUpdating ? "Update" : "Add"}
           </button>
         </div>
-
         <div className="list">
           {toDo.map((item) => (
             <ToDo
@@ -63,6 +62,6 @@ function Home() {
       </SContent>
     </div>
   );
-}
+};
 
 export default Home;

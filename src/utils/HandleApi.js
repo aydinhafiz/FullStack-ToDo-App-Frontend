@@ -1,11 +1,10 @@
 import axios from "axios";
 
 const basedUrl = "https://fullstack-todo-app-2vy7.onrender.com";
-// gelen dasayi log etmek istersen line 11 e data yaz
 
 const getAllTodo = (setTodo) => {
   axios
-    .get(basedUrl)
+    .get(`${basedUrl}/api/todos`)
     .then(({ data }) => {
       console.log("data --->");
       setTodo(data);
@@ -17,7 +16,7 @@ const getAllTodo = (setTodo) => {
 
 const addToDo = (text, setText, setToDo) => {
   axios
-    .post(`${basedUrl}/save`, { text })
+    .post(`${basedUrl}/api/todos/save`, { text })
     .then((data) => {
       console.log(data);
       setText("");
@@ -30,7 +29,7 @@ const addToDo = (text, setText, setToDo) => {
 
 const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
   axios
-    .post(`${basedUrl}/update`, { _id: toDoId, text })
+    .post(`${basedUrl}/api/todos/update`, { _id: toDoId, text })
     .then((data) => {
       console.log(data);
       setText("");
@@ -44,7 +43,7 @@ const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
 
 const deleteToDo = (_id, setToDo) => {
   axios
-    .post(`${basedUrl}/delete`, { _id })
+    .post(`${basedUrl}/api/todos/delete`, { _id })
     .then((data) => {
       console.log(data);
       getAllTodo(setToDo);
