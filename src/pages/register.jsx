@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // React Router Hook
+import { Link, useNavigate } from "react-router-dom"; // React Router Hook
+import { RegisterStyle } from "./register.styles";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,11 @@ const Register = () => {
       return;
     }
 
-    axios.post("https://fullstack-todo-app-2vy7.onrender.com/api/auth/register", formData)
+    axios
+      .post(
+        "https://fullstack-todo-app-2vy7.onrender.com/api/auth/register",
+        formData
+      )
       .then((res) => {
         alert("Registered Successfully");
         navigate("/login"); // Navigation nach erfolgreicher Registrierung
@@ -33,14 +38,57 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required />
-      <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required />
-      <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-      <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-      <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} required />
-      <button type="submit">Register</button>
-    </form>
+    <RegisterStyle>
+      <form className="register-form" onSubmit={handleSubmit}>
+        <input
+        className="input-register"
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          onChange={handleChange}
+          required
+        />
+        <input
+         className="input-register"
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          onChange={handleChange}
+          required
+        />
+        <input
+         className="input-register"
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          required
+        />
+        <input
+         className="input-register"
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          required
+        />
+        <input
+         className="input-register"
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          onChange={handleChange}
+          required
+        />
+        <button className="register-btn" type="submit">Register</button>
+        <div className="youhave-account">
+          <span className="yes-account"> you have already an account?</span>
+          <Link to="/login">
+          <button className="Login-btn">Login</button>
+          </Link>
+        </div>
+      </form>
+    </RegisterStyle>
   );
 };
 
