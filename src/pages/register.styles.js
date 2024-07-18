@@ -11,6 +11,18 @@ export const RegisterStyle = styled.div`
   border-radius: 10px;
   height: 450px;
 
+  h1 {
+    margin-top: 10px;
+    text-align: left;
+
+    color: #fff;
+    font-family: "Jost";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.25px;
+  }
   .register-form {
     display: flex;
     flex-direction: column;

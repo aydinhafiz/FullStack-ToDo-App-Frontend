@@ -40,8 +40,9 @@ const Register = () => {
   return (
     <RegisterStyle>
       <form className="register-form" onSubmit={handleSubmit}>
+        <h1>ToDoing</h1>
         <input
-        className="input-register"
+          className="input-register"
           type="text"
           name="firstName"
           placeholder="First Name"
@@ -49,7 +50,7 @@ const Register = () => {
           required
         />
         <input
-         className="input-register"
+          className="input-register"
           type="text"
           name="lastName"
           placeholder="Last Name"
@@ -57,7 +58,7 @@ const Register = () => {
           required
         />
         <input
-         className="input-register"
+          className="input-register"
           type="email"
           name="email"
           placeholder="Email"
@@ -65,7 +66,7 @@ const Register = () => {
           required
         />
         <input
-         className="input-register"
+          className="input-register"
           type="password"
           name="password"
           placeholder="Password"
@@ -73,18 +74,20 @@ const Register = () => {
           required
         />
         <input
-         className="input-register"
+          className="input-register"
           type="password"
           name="confirmPassword"
           placeholder="Confirm Password"
           onChange={handleChange}
           required
         />
-        <button className="register-btn" type="submit">Register</button>
+        <button className="register-btn" type="submit">
+          Register
+        </button>
         <div className="youhave-account">
           <span className="yes-account"> you have already an account?</span>
           <Link to="/login">
-          <button className="Login-btn">Login</button>
+            <button className="Login-btn">Login</button>
           </Link>
         </div>
       </form>

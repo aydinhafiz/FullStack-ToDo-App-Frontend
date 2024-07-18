@@ -33,6 +33,7 @@ const Login = ({ setToken }) => {
   return (
     <LoginStyle>
       <form className="LoginForm" onSubmit={handleSubmit}>
+        <h1>ToDoing</h1>
         <input
           type="email"
           name="email"
@@ -56,7 +57,9 @@ const Login = ({ setToken }) => {
         <div className="dont-account">
           <span className="no-account">Dont have an account ?</span>
           <Link to="/register">
-            <button className="register-button" type="submit">Register</button>
+            <button className="register-button" type="submit">
+              Register
+            </button>
           </Link>
         </div>
       </form>
