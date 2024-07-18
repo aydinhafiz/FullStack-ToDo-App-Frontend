@@ -15,6 +15,7 @@ export const RegisterStyle = styled.div`
     margin-top: 10px;
     text-align: left;
 
+    
     color: #fff;
     font-family: "Jost";
     font-size: 40px;
